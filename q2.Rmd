@@ -1,14 +1,14 @@
 ---
 title: "Coursera Statistical Inference - Inference"
-author: pigmy
+author: "pigmy"
 date: "`r format(Sys.time(), '%d %B, %Y')`"
 output:
+  pdf_document:
+    toc: yes
   html_document:
     highlight: pygments
     keep_md: yes
     theme: united
-    toc: yes
-  pdf_document:
     toc: yes
 url: http://google.com
 ---

@@ -1,8 +1,10 @@
 ---
 title: "Coursera Statistical Inference - Simulation"
-author: pigmy
+author: "pigmy"
 date: "`r format(Sys.time(), '%d %B, %Y')`"
 output:
+  pdf_document:
+    toc: yes
   html_document:
     highlight: pygments
     keep_md: yes
@@ -104,7 +106,7 @@ theoretical standard deviation ```r theoretical.sd``` by
   
 ### 3. Is the distribution normal?  
 
-```{r c, echo=FALSE, fig.width=12, fig.height=8}
+```{r samples, echo=FALSE, fig.width=12, fig.height=8}
 mult = 20
 par(mfrow=c(1,2))
 means2 <- rowMeans(matrix(rexp(sims*sample.size*mult, rate=lambda), 
@@ -117,7 +119,7 @@ closer to the normal distribution.
 
 #### Q-Q Plot 
 
-```{r compare.with.normal, echo=FALSE}    
+```{r normal, echo=FALSE, fig.height=3, fig.width=4}    
 qqnorm(means, col="darkgreen")
 qqline(means, col="purple")
 ```  
