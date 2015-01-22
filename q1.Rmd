@@ -25,11 +25,6 @@ compare it to the CLT(Centeral Limit Theorem). The excercise we are
 undertaking is already restricted to specific values that we are 
 documented in the code itself.
 
-In performing this task we rely on the exponential distribution properties
-+ `lambda` is the rate 
-+ `1/lambda` is the distribution's mean
-+ `1/lambda` is the Standard Deviation
-
 ## Simulations
 As instructed we are going to perform 1000 simulations of 40 samples each, where `lambda = 0.2`
 
@@ -49,12 +44,7 @@ means <- rowMeans(exp.sim)
 ```{r diagram.function, echo=FALSE}
 plot.hist.scale <- function(subject, ms, ss) {
   hist(ms, breaks=25, probability=TRUE, main=subject, xlab="", col="darkgreen")
-  lines(density(ms), col="red", lwd=3) # density of the averages of samples
-
-  # theoretical density of the averages of samples
-  #xfit <- seq(min(ms), max(ms), length=100)
-  #yfit <- dnorm(xfit, mean=d.mean, sd=(d.sd/sqrt(ss)))
-  #lines(xfit, yfit, pch=22, col="purple", lty=2, lwd=3)
+  lines(density(ms), col="red", lwd=3) 
   curve(dnorm(x, d.mean, d.sd/sqrt(ss)), min(ms), max(ms), col="purple", add=T, lty=2, lwd=3)
 
   # add legend
