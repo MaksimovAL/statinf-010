@@ -2,7 +2,6 @@
 title: "Coursera Statistical Inference - Inference"
 author: pigmy
 date: "`r format(Sys.time(), '%d %B, %Y')`"
-abstract: http://google.com
 output:
   html_document:
     highlight: pygments
@@ -13,6 +12,9 @@ output:
     toc: yes
 url: http://google.com
 ---
+GitHub: https://github.com/perplexedpigmy/statinf-010
+
+RPub: http://rpubs.com/perplexedpigmy/54935
 
 ## Overview
 Report analyses the ToothGrowth data as per the instructions provided 

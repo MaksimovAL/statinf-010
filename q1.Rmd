@@ -1,7 +1,6 @@
 ---
 title: "Coursera Statistical Inference - Simulation"
 author: pigmy
-url: http://google.com
 date: "`r format(Sys.time(), '%d %B, %Y')`"
 output:
   html_document:
@@ -10,6 +9,9 @@ output:
     theme: united
     toc: yes
 ---
+GitHub: https://github.com/perplexedpigmy/statinf-010
+
+RPub: http://rpubs.com/perplexedpigmy/54934
 
 ```{r required.packages, echo=FALSE}
 require('knitr', quietly=TRUE)
