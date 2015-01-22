@@ -83,14 +83,14 @@ ddply(ToothGrowth, dose ~ supp,function(x)
       c(mean=mean(x$len), sd=sd(x$len),
         conf.int=t.test(x$len)$conf.int))
 ```  
-We observe that in 95% confidence interval the `Ascorbic Acid(VC)` intervals are pairwise disjoint so we can claim with high level of confidence that  the length means are distinct, moreover there is a clear growth correlation between dose & length.
+We observe that in 95% confidence interval the `Ascorbic Acid(VC)` intervals are pairwise disjoint so we can claim with high level of confidence that the length means are distinct, moreover there is a clear growth correlation between dose & length means.
 
-By can also immediately identify with  high level of confidence that 
-For 0.5 and 1 milligrams Orange Juice have has greater impact on 
+By now we can also immediately identify with high level of confidence 
+that For 0.5 and 1 milligrams Orange Juice have has greater impact on 
 tooth growth (On the merit that for those 2 doses there confidence
 interval are pairwise disjoint).
 
-For Orange Juice(OJ) supplement, however, there is an overlap for dose 1 and 2 milligrams, 
+For Orange Juice(OJ) supplement type, however, there is an overlap for dose 1 and 2 milligrams, 
 and we are forced to look deeper.
 ```{r by.dose.hypothesis.test, echo=TRUE}
 t.test(len ~ dose, paired=FALSE, var.equal=TRUE,
@@ -105,15 +105,14 @@ p <- hp$parameter
 q <- qt(.025, p)
 ```
 The t value ```r t``` being less than **qt(.025, ```r p```)** == ```r q```
-allows us to identify the length for 2 milligrams as greater than the 1 milligram.
+allows us to assert that the mean length for 2 milligrams as greater than the for the 1 milligram dose.
 
-
-In the 2.0 milligram dose we there is overlap between `Orange Juice (OJ)` and `Ascorbic Acid (VC)` let's dig deeper 
+In the 2.0 milligram dose there is an overlap between `Orange Juice (OJ)` and `Ascorbic Acid (VC)` let's dig deeper 
 ```{r by.supp, echo=TRUE}
 t.test(len ~ supp, paired=FALSE, var.equal=FALSE,
        data=subset(ToothGrowth, dose == 2.0))
 ```
-The confidence Interval includes 0 and hence difference in supplements types is insignificant.
+The confidence Interval includes 0 and hence difference between the supplements types vis-a-vis mean lengths is insignificant.
 
 ## Conclusion
 We have conducted an analysis of the ToothGrowth data based on the 
@@ -122,6 +121,6 @@ population variance the same. We are also assuming that the samples
 are independent so the unpaired testing was employed.
 
 Our analysis has shown with high confidence that the there is a 
-correlation between the supplement type used and teeth growth in guinea pigs
-when for small doses of 0.5 and 1 milligrams Orange Juice clearly has
-and advantage.
+correlation between the supplement type used and teeth growth in guinea pigs, 
+when for small doses of 0.5 and 1 milligrams, Orange Juice, clearly has
+an advantage.
